@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Contact from './components/Contact';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+
+export const App = (
+  // write your HTML code here
+
+  <div>
+    <h1 className="text-center">My contacts list 📱</h1>
+
+    <div>
+      <div id="container">
+        <Contact deleteAble={true} name="Emmanuel" email="emmanuel@email.com" phone="552312354" />
+        <Contact deleteAble={true} name="Johana" email="johana@email.com" phone="92034902" />
+        <Contact deleteAble={false} name="Lucas" email="lucas@email.com" phone="234983499" />
+        <Contact deleteAble={true} name="Marie" email="marie@email.com" phone="238942384" />
+        <Contact deleteAble={true} name="Pedro" email="pedro@email.com" phone="934584875" />
+      </div>
+    </div>
+  </div>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(App, document.getElementById('root'));
